@@ -2,14 +2,17 @@ package itemtypes;
 
 import interfaces.AbstractItem;
 
-public class InventoryItem extends AbstractItem {
+import java.io.Serializable;
+
+public class InventoryItem extends AbstractItem implements Serializable {
 
     private int id = 1;
     private int quantity;
+    public InventoryItem() {
 
-    public InventoryItem(String name, String category, String description, boolean breakable,
-                         boolean perishable, double price, int id, int quantity) {
-        super(name, category, description, breakable, perishable, price);
+    }
+
+    public InventoryItem(int id, int quantity) {
         this.id = id;
         this.quantity = quantity;
     }
@@ -42,12 +45,26 @@ public class InventoryItem extends AbstractItem {
 
     @Override
     public String getItemDescription() {
-        return getDescription();
+        return "inventory item descr";
     }
-
 
     @Override
     public void sale(double price) {
 
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
+    }
+
+    @Override
+    public void setCategory(String category) {
+
+    }
+
+    @Override
+    public String getCategory() {
+        return null;
     }
 }
