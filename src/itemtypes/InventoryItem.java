@@ -4,7 +4,7 @@ import interfaces.AbstractItem;
 
 public class InventoryItem extends AbstractItem {
 
-    private int id;
+    private int id = 1;
     private int quantity;
 
     public InventoryItem(String name, String category, String description, boolean breakable,

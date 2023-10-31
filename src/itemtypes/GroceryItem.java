@@ -1,12 +1,12 @@
 package itemtypes;
 
-import interfaces.Breakable;
+import interfaces.Perishable;
 
 import java.io.Serializable;
 
-public class ElectronicsItem extends InventoryItem implements Breakable, Serializable {
-    public ElectronicsItem(String name, String category, String description, boolean breakable,
-                           boolean perishable, double price, int id, int quantity) {
+public class GroceryItem extends InventoryItem implements Perishable, Serializable {
+    public GroceryItem(String name, String category, String description, boolean breakable,
+                       boolean perishable, double price, int id, int quantity) {
         super(name, category, description, breakable, perishable, price, id, quantity);
     }
 
