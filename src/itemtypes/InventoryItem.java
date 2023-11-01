@@ -32,6 +32,9 @@ public class InventoryItem extends AbstractItem implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    public String getName() {
+        return "";
+    }
 
     @Override
     public String getItemDetails() {
