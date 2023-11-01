@@ -5,6 +5,7 @@ import itemtypes.InventoryItem;
 import order.MakeOrder;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -52,8 +53,8 @@ public class Main {
                     }
                     break;
                 case 4:
-                    MakeOrder.order(items);
-                    menuIndex = backMenu();
+                    HashMap<String, Integer> orderMap = new HashMap<>();
+                    menuIndex = MakeOrder.order(items,orderMap);
                     if (menuIndex == 9){
                         isRunning = false;
                     }
