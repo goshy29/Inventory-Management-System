@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<InventoryItem> items = new ArrayList<>();
-        AddItems.addItemsToList(items);
+        // In case if we lost the data or something happened at the serializable file !!!
+        //AddItems.addItemsToList(items);
         System.out.println("Welcome to the E-commerce Console Application!");
         boolean isRunning = true;
         while (isRunning) {
@@ -28,7 +29,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Input Item id, name, category(Electronics, Grocery, Fragile), description,");
-                    System.out.println("isBreakable, isPerishable, price and quantity separated by comma!");
+                    System.out.println("isBreakable, isPerishable, price and quantity SEPARATED BY COMMA!!");
                     String[] input = sc.nextLine().trim().split(",");
                     System.out.println("8. Save");
                     System.out.println("9. Cancel");
