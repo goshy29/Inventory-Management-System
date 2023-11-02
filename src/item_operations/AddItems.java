@@ -23,17 +23,11 @@ public class AddItems {
         items.add(new FragileItem("Glass Cups", "Fragile", "The strongest cups ever",
                 false, true, 25.00, 6, 1200));
 
-        String path = "C:\\Users\\gdobromirov\\Desktop\\Spring Boot\\sir A\\IMSSerializable.txt";
-        try (FileOutputStream fos = new FileOutputStream(path, true);
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(items);
-        }
-        catch (IOException exc) {
-            exc.printStackTrace();
-        }
+        add(items);
     }
 
     public static void addNewItemToList(ArrayList<InventoryItem> items, String[] input) {
+        items = UpdateItems.update();
         if (input[2].equals("Electronics")) {
             items.add(new ElectronicsItem(input[1], input[2], input[3], Boolean.parseBoolean(input[4]),
                     Boolean.parseBoolean(input[5]), Double.parseDouble(input[6]), Integer.parseInt(input[0]), Integer.parseInt(input[7])));
@@ -43,6 +37,18 @@ public class AddItems {
         } else {
             items.add(new ElectronicsItem(input[1], input[2], input[3], Boolean.parseBoolean(input[4]),
                     Boolean.parseBoolean(input[5]), Double.parseDouble(input[6]), Integer.parseInt(input[0]), Integer.parseInt(input[7])));
+        }
+
+        add(items);
+    }
+
+    private static void add(ArrayList<InventoryItem> items) {
+        String path = "C:\\Users\\gdobromirov\\Desktop\\Spring Boot\\sir A\\IMSSerializable.txt";
+        try (FileOutputStream fos = new FileOutputStream(path);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(items);
+        } catch (IOException exc) {
+            exc.printStackTrace();
         }
     }
 }
