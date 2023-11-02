@@ -48,6 +48,7 @@ public class MakeOrder {
         if (menuIndex == 1) {
             System.out.println("1. Credit/Debit Card");
             System.out.println("2. PayPal");
+            System.out.print("Select type of payment: ");
             int paymentMethod = Integer.parseInt(sc.nextLine());
             if (paymentMethod == 1) {
                 CreditCardOrder.finish(items, orderMap);

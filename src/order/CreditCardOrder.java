@@ -32,7 +32,7 @@ public class CreditCardOrder {
             }
         }
         System.out.printf("Total Sum for Payment: %.2f%n", totalSumForPayment);
-        System.out.printf("Type of payment: Credit/Debit Card; User: %s%n", name);
+        System.out.printf("Type of payment: Credit/Debit Card; User: %s%n", creditCardPayment.getName());
         System.out.print("Pres 1 to Order: ");
         pressOne = Integer.parseInt(sc.nextLine());
         System.out.println("Your order has been placed successfully!");

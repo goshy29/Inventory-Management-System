@@ -33,7 +33,7 @@ public class PayPalOrder {
             }
         }
         System.out.printf("Total Sum for Payment: %.2f%n", totalSumForPayment);
-        System.out.printf("Type of payment: PayPal; User: %s%n", name);
+        System.out.printf("Type of payment: PayPal; User: %s%n", payPalPayment.getName());
         System.out.print("Pres 1 to Order: ");
         pressOne = Integer.parseInt(sc.nextLine());
         System.out.println("Your order has been placed successfully!");
